@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: rgb(54, 5, 48);
+}
+
+.text-header {
+  color: rgb(213, 5, 151);
+}

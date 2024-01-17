@@ -1,0 +1,23 @@
+<div class="container my-5 p-5 w-75 bg-light rounded">
+  <div class="letters d-flex justify-content-center flex-column align-items-center">
+    <h1 class="text-header text-center p-3">Form an English Word with These Letters</h1>
+    <div class="row justify-content-center">
+      <% @letters.each do |letter| %>
+        <div class="col-auto">
+          <h3 class="text-dark bg-info py-3 px-3 m-1 d-flex justify-content-center align-items-center" style="min-width: 60px;">
+            <%= letter %>
+          </h3>
+        </div>
+      <% end %>
+    </div>
+  <h3 class="text-center my-5">What's the longest word you could find?</h3>
+  <div>
+    <form action="/score" data-turbo="false" method="POST">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= hidden_field_tag :letters, @letters %>
+      <input type="text" placeholder="Type your word here!" name="word" class="p-2">
+      <input type="submit" value="GO" class="p-2 btn btn-dark text-info fw-bold fs-4">
+    </form>
+  </div>
+  </div>
+</div>
