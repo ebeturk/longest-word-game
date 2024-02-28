@@ -1,4 +1,4 @@
-require 'uri'
+require 'open-uri'
 class GamesController < ApplicationController
   def new
     @letters = ('A'..'Z').to_a.sample(7)
